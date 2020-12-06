@@ -1,0 +1,17 @@
+*{
+    border: solid;
+    border-radius: 4px;
+    margin: 1em;
+}
+#frame{
+    background-color: crimson;
+}
+#frame>div{
+    position: relative;
+}
+#screen{
+    width: 72%;
+    padding-top: 45%;
+    background-color: whitesmoke;
+    
+}
