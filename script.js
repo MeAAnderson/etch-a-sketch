@@ -3,14 +3,47 @@ let width = 40;
 let x = -1;
 let y = -1;
 
-let testDiv = document.getElementById("res");
-//testDiv.addEventListener("mouseover", function(){draw("right")});
-console.log(testDiv);
 let hovering;
-testDiv.addEventListener("mouseover", function(){
-  hovering = setInterval(function(){draw("right")}, 300);
+
+let upControl = document.getElementById("up");
+upControl.addEventListener("mouseover", function () {
+  hovering = setInterval(function () {
+    draw("up");
+  }, 100);
+});
+upControl.addEventListener("mouseout", function () {
+  clearInterval(hovering);
 });
 
+let downControl = document.getElementById("down");
+downControl.addEventListener("mouseover", function () {
+  hovering = setInterval(function () {
+    draw("down");
+  }, 100);
+});
+downControl.addEventListener("mouseout", function () {
+  clearInterval(hovering);
+});
+
+let leftControl = document.getElementById("left");
+leftControl.addEventListener("mouseover", function () {
+  hovering = setInterval(function () {
+    draw("left");
+  }, 100);
+});
+leftControl.addEventListener("mouseout", function () {
+  clearInterval(hovering);
+});
+
+let rightControl = document.getElementById("right");
+rightControl.addEventListener("mouseover", function () {
+  hovering = setInterval(function () {
+    draw("right");
+  }, 100);
+});
+rightControl.addEventListener("mouseout", function () {
+  clearInterval(hovering);
+});
 
 function makeGrid(height, width) {
   const screen = document.getElementById("screen");
@@ -27,17 +60,17 @@ function makeGrid(height, width) {
 }
 
 function draw(direction) {
-  if (x<0){
-    x+=1;
-  } else if (x>=width){
-    x-=1;
+  if (x < 0) {
+    x += 1;
+  } else if (x >= width) {
+    x -= 1;
   }
-  if (y<0){
-    y+=1;
-  } else if (y>=height){
-    y-=1;
+  if (y < 0) {
+    y += 1;
+  } else if (y >= height) {
+    y -= 1;
   }
-  
+
   switch (direction) {
     case "up":
       y -= 1;

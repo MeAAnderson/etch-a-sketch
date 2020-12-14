@@ -7,22 +7,18 @@
     
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="makeGrid(height,width)" onload="infinish()">
+  <body onload="makeGrid(height,width)">
     <h1>Etch-A-Sketch</h1>
     <div id="frame">
       i'm the frame
       <div id="deco">another title</div>
       <div id="screen"></div>
       <div class="nav" id="controls">
-        <button onclick="draw('up')">up</button>
-        <button onclick="draw('down')">down</button>
-        <button onclick="draw('left')">left</button>
-        <button onclick="draw('right')">right</button>
+        <div class="control" id="up">UP</div>
+        <div class="control" id="down">DOWN</div>
+        <div class="control" id="left">LEFT</div>
+        <div class="control" id="right">RIGHT</div>
       </div>
-    </div>
-    <div class="nav" id="options">
-      <div class="option" id="res">res</div>
-      <div class="option" id="re-color">color</div>
     </div>
   </body>
   <script src="script.js"></script>
