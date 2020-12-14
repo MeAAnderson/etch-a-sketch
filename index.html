@@ -7,16 +7,17 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="makeGrid(10, 16)">
+  <body onload="makeGrid(height,width)">
     <h1>Etch-A-Sketch</h1>
     <div id="frame">
       i'm the frame
       <div id="deco">another title</div>
       <div id="screen"></div>
       <div class="nav" id="controls">
-        <button onclick="draw()">up</button>
-        <div>left</div>
-        <div>right</div>
+        <button onclick="draw('up')">up</button>
+        <button onclick="draw('down')">down</button>
+        <button onclick="draw('left')">left</button>
+        <button onclick="draw('right')">right</button>
       </div>
     </div>
     <div class="nav" id="options">

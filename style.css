@@ -14,7 +14,8 @@ h1{
 #frame {
     grid-column: 3 / span 6;;
     grid-row: 2 / span 4;
-    
+    min-width: 400px;
+    min-height: 250px;
   background-color: crimson;
 }
 #options{
@@ -30,5 +31,5 @@ h1{
   background-color: whitesmoke;
 }
 .pwdr{
-    border: hidden;
+    border: ;
 }
