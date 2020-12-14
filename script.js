@@ -1,7 +1,16 @@
-height = 25;
-width = 40;
+let height = 25;
+let width = 40;
 let x = -1;
 let y = -1;
+
+let testDiv = document.getElementById("res");
+//testDiv.addEventListener("mouseover", function(){draw("right")});
+console.log(testDiv);
+let hovering;
+testDiv.addEventListener("mouseover", function(){
+  hovering = setInterval(function(){draw("right")}, 300);
+});
+
 
 function makeGrid(height, width) {
   const screen = document.getElementById("screen");
@@ -20,12 +29,12 @@ function makeGrid(height, width) {
 function draw(direction) {
   if (x<0){
     x+=1;
-  } else if (x>=height){
+  } else if (x>=width){
     x-=1;
   }
   if (y<0){
     y+=1;
-  } else if (y>=width){
+  } else if (y>=height){
     y-=1;
   }
   

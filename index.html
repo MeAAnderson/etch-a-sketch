@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
-    <script src="script.js"></script>
+    
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="makeGrid(height,width)">
+  <body onload="makeGrid(height,width)" onload="infinish()">
     <h1>Etch-A-Sketch</h1>
     <div id="frame">
       i'm the frame
@@ -21,8 +21,9 @@
       </div>
     </div>
     <div class="nav" id="options">
-      <div class="option" id="re-res">res</div>
+      <div class="option" id="res">res</div>
       <div class="option" id="re-color">color</div>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
