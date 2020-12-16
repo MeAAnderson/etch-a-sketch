@@ -10,7 +10,7 @@
   <body onload="makeGrid(height,width)">
     <div class="header">
       <h1>Digital Etch-A-Sketch</h1>
-      <h3>hover over a button to draw</h3>
+      <h3>touch a button to draw</h3>
     </div>
     <div id="frame">
       <div id="deco">Etch-A-Sketch</div>
@@ -21,6 +21,11 @@
         <div class="control" id="left">LEFT</div>
         <div class="control" id="right">RIGHT</div>
       </div>
+    </div>
+    <div id="options">
+      <input type="color" id="color" onchange="updateColor()"></input>
+      <button class="opt" id="shake" onclick="shake()">shake to clear</button>
+      <input type="range" min="5" max="50" onchange="updateHeight()" class="opt" id="res" onclick="updateHeight()"></button>
     </div>
   </body>
   <script src="script.js"></script>

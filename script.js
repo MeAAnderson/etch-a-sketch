@@ -1,10 +1,9 @@
 let height = 50;
-let width =  Math.round(height*1.6);
-let x = Math.round(width/2);
-let y = Math.round(height/2);
-let cursorX = x;
-let cursorY = y;
-let currentColor = "blue";
+let width = Math.round(height * 1.6);
+let x = Math.round(width / 2);
+let y = Math.round(height / 2);
+
+let currentColor = document.getElementById("color").value;
 
 let hovering;
 
@@ -60,11 +59,12 @@ function makeGrid(height, width) {
       screen.appendChild(a);
     }
   }
+  updateColor();
   makeCursor(currentColor);
 }
 
-function makeCursor(color){
-  const cursor = document.getElementById(`${cursorX}-${cursorY}`);
+function makeCursor(color) {
+  const cursor = document.getElementById(`${x}-${y}`);
   cursor.style.backgroundColor = color;
   return cursor;
 }
@@ -95,6 +95,61 @@ function draw(direction) {
       x += 1;
       break;
   }
-  let current = document.getElementById(`${x}-${y}`);
-  current.style.backgroundColor = "blue";
+  makeCursor(currentColor);
+}
+
+function updateColor() {
+  currentColor = document.getElementById("color").value;
+  document.getElementById("shake").style.borderColor = currentColor;
+  //document.getElementById("res::-webkit-slider-track").style.backgroundColor = currentColor;
+}
+
+function shake() {
+  let frame = document.getElementById("frame");
+  frame.animate(
+    [
+      {
+        justifySelf: "center",
+      },
+      {
+        justifySelf: "left",
+      },
+    ],
+    250
+  );
+  frame.animate(
+    [
+      {
+        justifySelf: "center",
+      },
+      {
+        justifySelf: "right",
+      },
+    ],
+    250
+  );
+  clear();
+}
+
+function clear() {
+  setTimeout(function () {
+    let pwdr = document.querySelectorAll(".pwdr");
+    for (i = 0; i < pwdr.length; i++) {
+      pwdr[i].style.backgroundColor = "whitesmoke";
+    }
+    makeCursor(currentColor);
+  }, 400);
+}
+
+function updateHeight() {
+  let pwdr = document.querySelectorAll(".pwdr");
+  for (i = 0; i < pwdr.length; i++) {
+    pwdr[i].remove();
+  }
+  height = document.getElementById("res").value;
+  console.log(height);
+  width = Math.round(height * 1.6);
+  x = Math.round(width / 2);
+  y = Math.round(height / 2);
+  makeGrid(height, width);
 }
