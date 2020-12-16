@@ -1,7 +1,10 @@
-let height = 25;
-let width = 40;
-let x = -1;
-let y = -1;
+let height = 50;
+let width =  Math.round(height*1.6);
+let x = Math.round(width/2);
+let y = Math.round(height/2);
+let cursorX = x;
+let cursorY = y;
+let currentColor = "blue";
 
 let hovering;
 
@@ -53,10 +56,17 @@ function makeGrid(height, width) {
     for (j = 0; j < width; j++) {
       let a = document.createElement("div");
       a.className = "pwdr";
-      a.id = `${i}-${j}`;
+      a.id = `${j}-${i}`;
       screen.appendChild(a);
     }
   }
+  makeCursor(currentColor);
+}
+
+function makeCursor(color){
+  const cursor = document.getElementById(`${cursorX}-${cursorY}`);
+  cursor.style.backgroundColor = color;
+  return cursor;
 }
 
 function draw(direction) {
@@ -85,6 +95,6 @@ function draw(direction) {
       x += 1;
       break;
   }
-  let current = document.getElementById(`${y}-${x}`);
+  let current = document.getElementById(`${x}-${y}`);
   current.style.backgroundColor = "blue";
 }
