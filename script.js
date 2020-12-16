@@ -11,7 +11,7 @@ let upControl = document.getElementById("up");
 upControl.addEventListener("mouseover", function () {
   hovering = setInterval(function () {
     draw("up");
-  }, 100);
+  }, 66);
 });
 upControl.addEventListener("mouseout", function () {
   clearInterval(hovering);
@@ -21,7 +21,7 @@ let downControl = document.getElementById("down");
 downControl.addEventListener("mouseover", function () {
   hovering = setInterval(function () {
     draw("down");
-  }, 100);
+  }, 66);
 });
 downControl.addEventListener("mouseout", function () {
   clearInterval(hovering);
@@ -31,7 +31,7 @@ let leftControl = document.getElementById("left");
 leftControl.addEventListener("mouseover", function () {
   hovering = setInterval(function () {
     draw("left");
-  }, 100);
+  }, 66);
 });
 leftControl.addEventListener("mouseout", function () {
   clearInterval(hovering);
@@ -41,7 +41,7 @@ let rightControl = document.getElementById("right");
 rightControl.addEventListener("mouseover", function () {
   hovering = setInterval(function () {
     draw("right");
-  }, 100);
+  }, 66);
 });
 rightControl.addEventListener("mouseout", function () {
   clearInterval(hovering);
@@ -101,7 +101,7 @@ function draw(direction) {
 function updateColor() {
   currentColor = document.getElementById("color").value;
   document.getElementById("shake").style.borderColor = currentColor;
-  //document.getElementById("res::-webkit-slider-track").style.backgroundColor = currentColor;
+  document.getElementById("instruct").style.color = currentColor;
 }
 
 function shake() {

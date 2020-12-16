@@ -22,10 +22,11 @@
         <div class="control" id="right">RIGHT</div>
       </div>
     </div>
-    <div id="options">
-      <input type="color" id="color" onchange="updateColor()"></input>
+    <div id="options">    
+        <div id="instruct">make a selection:</div>  
+        <input type="color" class="opt" id="color" onchange="updateColor()"></input>
+        <input type="range" min="5" max="50" onchange="updateHeight()" class="opt" id="res" onclick="updateHeight()"></button>
       <button class="opt" id="shake" onclick="shake()">shake to clear</button>
-      <input type="range" min="5" max="50" onchange="updateHeight()" class="opt" id="res" onclick="updateHeight()"></button>
     </div>
   </body>
   <script src="script.js"></script>

@@ -93,12 +93,13 @@ body {
 }
 #options{
   grid-row: 10/ span 4;
-  grid-column: 5/ span 2;
+  grid-column: 4/ span 4;
   justify-self: center;
-  align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0.5em;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
 }
 #color{
@@ -110,7 +111,12 @@ body {
 .opt{
   margin: 0.5em;
   padding: 0.5em;
+  width: 66%;
+  justify-self: center;
   background-color: whitesmoke;
   border: solid;
   border-radius: 3px;
+}
+#instruct{
+  grid-column: 1/span 3;
 }
