@@ -46,7 +46,7 @@ body {
   border: hidden;
 }
 #controls {
-  grid-column: 2 / span 8;
+  grid-column: 1 / span 10;
   grid-row: 9 /span 2;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -94,13 +94,13 @@ body {
   align-self: start;
 }
 #options{
-  grid-row: 10/ span 4;
-  grid-column: 4/ span 4;
+  grid-row: 1 / span 2;
+  grid-column: 3/ span 4;
   justify-self: center;
   padding: 0.5em;
   align-self: center;
   display: grid;
-  grid-template-columns: repeat(3, 3fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
 }
@@ -115,6 +115,7 @@ body {
   padding: 0.5em;
   width: 66%;
   justify-self: center;
+  align-self: start;
   background-color: whitesmoke;
   border: solid;
   border-radius: 3px;
